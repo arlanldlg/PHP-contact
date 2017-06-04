@@ -10,7 +10,7 @@
     mysql_connect($host, $user, $pass);
     mysql_select_db($dbname);
 
-    if (isset($_POST['']))  {
+    if (isset($_POST['username']))  {
 
         $username = $_POST['username'];
         $password = $_POST['password']; 
@@ -18,7 +18,7 @@
         $sql = "SELECT * FROM users WHERE username='".$username."' AND password='".$password."' LIMIT 1";
         $res = mysql_query($sql);
 
-        if (mysql_num_rows($res) == 1){
+        if (mysql_num_rows($res) == 1) {
             echo "Login successful";
             exit();
         } else {
